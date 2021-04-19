@@ -1,0 +1,24 @@
+<form class="receiptForm" method="POST">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Enter some ingredient</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Receipt count</label>
+    <input type="number" max="10" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div class="container">
+  {{test}}
+  {{#each resBody}}
+  <div class="card" style="width: 18rem;">
+    <img src="{{this.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+    </div>
+  </div>
+
+  {{/each}}
+</div>

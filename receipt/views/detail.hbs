@@ -1,0 +1,73 @@
+<nav class="navbar navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/profile">Профиль</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/receipt">Получить рецепты</a>
+        </li>
+      </ul>
+      </div>
+</nav>
+<div>
+  <div class="card image-rec" style="width: 18rem;">
+    <img src="{{resInfo.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{resInfo.title}}</h5>
+    </div>
+    <h1 class="likebutton" data-id="{{resInfo.id}}" id="likeID">💝</h1>
+
+  </div>
+  <div class="ingContainer">
+    <button type="button" class="btn btn-warning">
+      <h2 style="color: royalblue;">Ингредиенты</h2>
+    </button>
+    {{{resBody}}}
+  </div>
+<div class="ingContainer">
+    <button type="button" class="btn btn-warning">
+      <h2 style="color: royalblue;">Инструменты:</h2>
+    </button>
+    {{{resBody2}}}
+  </div>
+  {{!-- <p class="lead">Ingredients:</p>
+  <ol class="list-group list-group-numbered">
+    {{#each ingInfo.ingredients}}
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{this.name}}</div>
+      </div>
+      <span class="badge bg-primary rounded-pill">{{this.amount.metric.value}} гр / шт</span>
+    </li>
+    {{/each}}
+  </ol> --}}
+  <div id="instructions" class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+      <h3 style="color: royalblue;">Instruction:</h3>
+    </div>
+    <div class="card-body">
+      <p  id="instuctionId" class="card-text">{{resInfo.instructions}}</p>
+    </div>
+    <button data-id="{{resInfo.id}}">Перевести</button>
+  </div>
+  <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+      <h3 style="color: royalblue;">Инструкция:</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{rusInfo}}</p>
+    </div>
+  </div>
+  <div class="card-body">
+    <a href="{{resInfo.sourceUrl}}" class="btn btn-primary btn-lg " tabindex="-1" role="button"
+      aria-disabled="true">Подробнее в оригигальном источнике</a>
+  </div>
+
+  <div class="card-body">
+    <a href="/same/{{resInfo.id}}" class="btn btn-primary btn-lg " tabindex="-1" role="button"
+      aria-disabled="true">Похожие рецепты</a>
+  </div>
